@@ -1,0 +1,29 @@
+name: Update Hombre List
+
+on:
+  schedule:
+    - cron: '0 * * * *'  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Obtain fresh text files [comet]
+        run: curl https://coomer.su/api/v1/creators.txt > coomer-creators.txt
+      - name: Obtain fresh text files [kimono]
+        run: curl https://kemono.su/api/v1/creators.txt > kemono-creators.txt
+      - name: Set up git remote url
+        run: |
+          git remote set-url origin https://${{ secrets.PIPELINE_KEY }}@github.com/p6subsegment/hombre.git
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: Update Hombre Repo
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
+        env:
+          GITHUB_TOKEN: ${{ secrets.PIPELINE_KEY }}
+      - name: Set branch to add and commit
+        if: always()
+        run: git push origin HEAD:main
+
