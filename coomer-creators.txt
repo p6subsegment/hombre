@@ -1,14 +1,1 @@
-<HTML>
-<HEAD>
-<TITLE>Could Not Connect</TITLE>
-</HEAD>
-
-<BODY BGCOLOR="white" FGCOLOR="black">
-<H1>Could Not Connect</H1>
-<HR>
-
-<FONT FACE="Helvetica,Arial"><B>
-Description: Could not connect to the requested server host.
-</B></FONT>
-<HR>
-</BODY>
+<!DOCTYPE html><html lang=en><meta charset=utf-8><meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width"><title>Error 504</title><style>*{margin:0;padding:0}html{font:15px/22px arial,sans-serif;background: #fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}p{margin:11px 0 22px;overflow :hidden}ins{color:#777;text-decoration :none;}</style><p><b>504 - Gateway Timeout .</b> <ins>That’s an error.</ins><p>We did not receive a timely response from the upstream server.  <ins>That’s all we know.</ins>
