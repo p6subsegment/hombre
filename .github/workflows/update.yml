@@ -11,9 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Obtain fresh text files [comet]
-        run: "curl -H \"Accept: text/css\" -L https://coomer.party/api/v1/creators.txt > coomer-creators.txt"
+        run: "curl -H \"Accept: text/css\" -L https://coomer.party/api/v1/creators > coomer-creators.txt"
       - name: Obtain fresh text files [kimono]
-        run: "curl -H \"Accept: text/css\" -L https://kemono.party/api/v1/creators.txt > kemono-creators.txt"
+        run: "curl -H \"Accept: text/css\" -L https://kemono.party/api/v1/creators > kemono-creators.txt"
       - name: Set up git remote url
         run: |
           git remote set-url origin https://${{ secrets.PIPELINE_KEY }}@github.com/p6subsegment/hombre.git
